@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="mainpage.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+  <!-- Логотип + Текст слева -->
+  <div class="header-logo">
+    <img src="logo.jpg" alt="Логотип"> <!-- Ваша картинка -->
+    <span class="logo-text">Lost & Found</span> <!-- 👈 Новый текст -->
+  </div>
+  
+  <!-- Уведомления справа -->
+  <button id="notificationBtn" class="notification-btn">
+    🔔
+    <span class="notification-count">0</span>
+</button>
+</header>
+<div class="standalone-search-container">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Search for lost items..." class="search-input">
+  </div>
+</div>
+<div class="filter-navigation">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="lost">Lost</button>
+  <button class="filter-btn" data-filter="found">Found</button>
+</div>
+
+
+<div id="items-container">
+    <!-- Репорты из Firebase появятся здесь -->
+</div>
+
+<p id="loading-message">Loading items...</p>
+
+
+ 
+
+    <nav class="bottom-nav">
+  <a href="mainpage.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">🔍</span>
+    <span class="nav-label">Search</span>
+  </a>
+  <a href="report.html" class="nav-item active" onclick="setActive(this)">
+    <span class="nav-icon">➕</span>
+    <span class="nav-label">Report</span>
+  </a>
+  <a href="profile.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label">Profile</span>
+  </a>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+<script src="./read.js"></script>
+<script src="mainpage.js"></script>
+</body>
+</html>
