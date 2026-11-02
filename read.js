@@ -158,13 +158,14 @@ document.querySelectorAll('.filter-btn').forEach(function(button) {
 });
 
 function filterItems() {
-    document.querySelectorAll('#items-container .item-card').forEach(function(card) {
+    document.querySelectorAll('#items-container .items').forEach(function(box) {
+        var card = box.querySelector('.item-card');
         var status = card.dataset.status;
 
         if (currentFilter === 'all' || status === currentFilter) {
-            card.style.display = '';
+            box.style.display = '';
         } else {
-            card.style.display = 'none';
+            box.style.display = 'none';
         }
     });
 }
