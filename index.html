@@ -137,46 +137,78 @@ body {
         <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
     </div>
 
-    <div class="tabs-content">
-        <!-- КОНТЕНТ ВКЛАДКИ LOGIN -->
-        <div id="login-tab-content" class="active">
-            <form action="mainpage.html" method="get">
-                <h1>University Email</h1>
-                <div class="input_box">
-                    <input type="text" class="input" placeholder="student@university.edu">
-                </div>
-                
-                <h1>Password</h1>
-                <div class="input_box">
-                    <input type="password" class="input" placeholder="">
-                </div>
+    
+<div class="tabs-content">
 
-                <button type="submit" class="button butt">Login</button>
-            </form>
-        </div>
+    <!-- LOGIN -->
+    <div id="login-tab-content" class="active">
+        <form id="login-form">
 
-        <!-- КОНТЕНТ ВКЛАДКИ SIGN UP -->
-        <div id="signup-tab-content">
-            <form action="mainpage.html" method="get">
- 
-                <h1>University Email (Регистрация)</h1>
-                <div class="input_box">
-                    <input type="text" class="input" placeholder="student@university.edu">
-                </div>
-                <h1>Student ID</h1>
-                <div class="input_box">
-                    <input type="password" class="input" placeholder="123456">
-                </div>
-                <h1>Create Password</h1>
-                <div class="input_box">
-                    <input type="password" class="input" placeholder="">
-                </div>
-                
+            <h1>University Email</h1>
+            <div class="input_box">
+                <input type="email" id="login-email"
+                    class="input"
+                    placeholder="student@astanait.edu.kz"
+                    required>
+            </div>
 
-                <button type="submit" class="button butt">Sign Up</button>
-            </form>
-        </div>
-    </div> <!--.tabs-content-->
+            <h1>Password</h1>
+            <div class="input_box">
+                <input type="password" id="login-password"
+                    class="input"
+                    placeholder="Password"
+                    required>
+            </div>
+
+            <button type="submit" class="button butt">Login</button>
+        </form>
+    </div>
+
+    <!-- SIGN UP -->
+    <div id="signup-tab-content">
+        <form id="signup-form">
+
+            <h1>Full Name</h1>
+            <div class="input_box">
+                <input type="text" id="signup-name"
+                    class="input"
+                    placeholder="Your full name"
+                    required>
+            </div>
+
+            <h1>University Email</h1>
+            <div class="input_box">
+                <input type="email" id="signup-email"
+                    class="input"
+                    placeholder="student@astanait.edu.kz"
+                    required>
+            </div>
+
+            <h1>Student ID</h1>
+            <div class="input_box">
+                <input type="text" id="signup-student-id"
+                    class="input"
+                    placeholder="123456"
+                    required>
+            </div>
+
+            <h1>Create Password</h1>
+            <div class="input_box">
+                <input type="password" id="signup-password"
+                    class="input"
+                    placeholder="Create password"
+                    minlength="8"
+                    required>
+            </div>
+
+            <button type="submit" class="button butt">Sign Up</button>
+        </form>
+    </div>
+
+</div>
+
+<p id="auth-message"></p>
+
 
     <!-- Этот блок будет виден всегда под табами -->
     <div class="attention">
