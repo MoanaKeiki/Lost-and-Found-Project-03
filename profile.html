@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="profile.css">
-    <title>Document</title>
+    <title>Profile</title>
 </head>
 <body>
 <header class="main-header">
@@ -46,44 +46,107 @@
     </div>
     </div>
   <!-- Главная коробка-контейнер//dAuGE6mH7$-K?pC -->
-   
 <div class="card-box">
+    <!-- Заголовок в левом верхнем углу -->
     <h2 class="box-title">My items</h2>
 
     <div class="wrapper form-wrap">
-
         <div class="tabs">
-            <h3 class="active-tab">
-                <a class="active" href="#active-tab-content">Active</a>
-            </h3>
-
-            <h3 class="resolved-tab">
-                <a href="#resolved-tab-content">Resolved</a>
-            </h3>
+            <h3 class="active-tab"><a class="active" href="#active-tab-content">Active</a></h3>
+            <h3 class="resolved-tab"><a href="#resolved-tab-content">Resolved</a></h3>
         </div>
 
         <div class="tabs-content">
-
+            <!-- КОНТЕНТ ВКЛАДКИ ACTIVE -->
             <div id="active-tab-content" class="tab-pane active">
-                <div id="active-items">
-                    <p>Loading your items...</p>
-                </div>
+               <div id="active-tab-content" class="tab-pane active">
+    <div class="items">
+        
+        <!-- Левая часть: весь текст -->
+        <div class="item-info">
+             <img class="item-img" 
+             src="lostiphone.jpg" 
+             onerror="this.onerror=null; this.src='img/no-image.png';" 
+             alt="no image">
+            <!-- Верхняя строка: бейджи и название в один ряд -->
+            <div class="item-header">
+                <span class="badge Lost">LOST</span>
+                <span class="badge badge-green">ACTIVE</span>
+                <h4 class="item-title">Phone 13</h4>
+            </div>
+            
+            <!-- Средняя строка: локация и время (чуть меньше размером) -->
+            <div class="item-meta">
+                <span>Library - 1rt Floor</span>
+                <span class="meta-dot">•</span>
+                <span>2 hours ago</span>
+            </div>
+            
+            <!-- Нижняя строка: просмотры и ответы -->
+            <div class="item-stats">
+                <span class="stat-icon">👁️</span> 
+                <span class="stat-divider">|</span>
+                <span class="stat-icon">💬</span> 
+            </div>
+            
+            
+        </div>
+        
+       
+       
+             
+    </div>
+</div>
+
+
+               
             </div>
 
+            
             <div id="resolved-tab-content" class="tab-pane">
-                <div id="resolved-items">
-                    <p>Loading resolved items...</p>
-                </div>
+                 <div class="items">
+        
+    
+        <div class="item-info">
+              <img class="item-img" 
+             src="lostcharger.jpg" 
+             onerror="this.onerror=null; this.src='img/no-image.png';" 
+             alt="no image">
+            <!-- Верхняя строка: бейджи и название в один ряд -->
+            <div class="item-header">
+                <span class="badge Found">Found</span>
+                <span class="badge badge-Blue">RESOLVED</span>
+                <h4 class="item-title">charger Type C</h4>
             </div>
-
+            
+            <!-- Средняя строка: локация и время (чуть меньше размером) -->
+            <div class="item-meta">
+                <span>Gym</span>
+                <span class="meta-dot">•</span>
+                <span>2 hours ago</span>
+            </div>
+            
+            <!-- Нижняя строка: просмотры и ответы -->
+            <div class="item-stats">
+                <span class="stat-icon">👁️</span> 12 views
+                <span class="stat-divider">|</span>
+                <span class="stat-icon">💬</span> 3 responses
+            </div>
+            
+            
+        </div>
+        
+        
+       
+             
+            </div>
         </div>
     </div>
 </div>
 
-<button type="button" id="logout-button" class="button butt">
-    Sign out
-</button>
-
+<form action="index.html" method="get">
+    <button type="submit" class="button butt">Sign out</button>
+</form>
     <nav class="bottom-nav">
   <a href="mainpage.html" class="nav-item" onclick="setActive(this)">
     <span class="nav-icon">🔍</span>
@@ -120,7 +183,9 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./supabase.js"></script>
-<script src="./profile.js"></script>
+<script src="./index.js"></script>
+
+<script src="profile.js"></script>
 </body>
 </html>
 
