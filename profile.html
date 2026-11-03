@@ -33,12 +33,16 @@
 
         <!-- Блок с текстовой информацией -->
         <div class="profile-info">
-            <h2 class="profile-name">John Doe</h2>
-            <p class="profile-email">john.doe@university.edu</p>
-        <div class="profile-badges">
-            <span class="badge badge-blue">Computer Science</span>
-            <span class="badge badge-outline">✓ Verified Student</span>
-        </div>
+          <h2 class="profile-name" id="profile-name">Loading...</h2>
+          <p class="profile-email" id="profile-email">Loading...</p>
+       <div class="profile-badges">
+    <span class="badge badge-blue" id="profile-student-id">
+        Student
+    </span>
+    <span class="badge badge-outline" id="profile-verification">
+        ✓ Verified Student
+    </span>
+</div>
     </div>
     </div>
   <!-- Главная коробка-контейнер//dAuGE6mH7$-K?pC -->
@@ -53,38 +57,17 @@
         </div>
 
         <div class="tabs-content">
-            <!-- КОНТЕНТ ВКЛАДКИ ACTIVE -->
-            <div id="active-tab-content" class="tab-pane active">
-               <div id="active-tab-content" class="tab-pane active">
-    <div class="items">
-        
-        <!-- Левая часть: весь текст -->
-        <div class="item-info">
-             <img class="item-img" 
-             src="lostiphone.jpg" 
-             onerror="this.onerror=null; this.src='img/no-image.png';" 
-             alt="no image">
-            <!-- Верхняя строка: бейджи и название в один ряд -->
-            <div class="item-header">
-                <span class="badge Lost">LOST</span>
-                <span class="badge badge-green">ACTIVE</span>
-                <h4 class="item-title">Phone 13</h4>
-            </div>
-            
-            <!-- Средняя строка: локация и время (чуть меньше размером) -->
-            <div class="item-meta">
-                <span>Library - 1rt Floor</span>
-                <span class="meta-dot">•</span>
-                <span>2 hours ago</span>
-            </div>
-            
-            <!-- Нижняя строка: просмотры и ответы -->
-            <div class="item-stats">
-                <span class="stat-icon">👁️</span> 12 views
-                <span class="stat-divider">|</span>
-                <span class="stat-icon">💬</span> 3 responses
-            </div>
-            
+             <div id="active-tab-content" class="tab-pane active">
+        <div id="active-items">
+            <p>Loading your items...</p>
+        </div>
+    </div>
+
+    <div id="resolved-tab-content" class="tab-pane">
+        <div id="resolved-items">
+            <p>Loading resolved items...</p>
+        </div>
+    </div>
             
         </div>
         
@@ -140,9 +123,9 @@
     </div>
 </div>
 
-<form action="index.html" method="get">
-    <button type="submit" class="button butt">Sign out</button>
-</form>
+<button type="button" id="logout-button" class="button butt">
+    Sign out
+</button>
     <nav class="bottom-nav">
   <a href="mainpage.html" class="nav-item" onclick="setActive(this)">
     <span class="nav-icon">🔍</span>
