@@ -29,14 +29,23 @@ if (form) {
         btn.textContent = 'Saving...';
         message.textContent = '';
 
-       var report = {
+      // Get currently logged-in user
+const { data: { user }, error: userError } = await db.auth.getUser();
+
+if (userError || !user) {
+    alert("Please log in before submitting a report.");
+    return;
+}
+
+var report = {
     title: title,
     category: category,
     description: description,
     location: location,
     status: statusInput.value,
     contact_method: contactMethod,
-    contact_value: contactValue
+    contact_value: contactValue,
+    user_id: user.id
 };
 
         
