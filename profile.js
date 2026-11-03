@@ -286,3 +286,54 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(card);
     });
 });
+
+// LOAD USER PROFILE FROM SUPABASE
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    console.log("Loading profile...");
+
+    // Check current user
+    const { data: { user }, error: userError } = await db.auth.getUser();
+
+    console.log("User:", user);
+    console.log("User error:", userError);
+
+    if (userError || !user) {
+        alert("Please log in first!");
+        window.location.href = "index.html";
+        return;
+    }
+
+    // Get account information
+    const { data: account, error: accountError } = await db
+        .from("accounts")
+        .select("*")
+        .eq("id", user.id)
+        .single();
+
+    console.log("Account:", account);
+    console.log("Account error:", accountError);
+
+    if (accountError) {
+        document.getElementById("profile-name").textContent = "Profile not found";
+        return;
+    }
+
+    // Show information on page
+    document.getElementById("profile-name").textContent =
+        account.full_name;
+
+    document.getElementById("profile-email").textContent =
+        account.email;
+
+    document.getElementById("profile-student-id").textContent =
+        account.student_id || "Student";
+
+    document.getElementById("profile-verification").textContent =
+        user.email_confirmed_at
+            ? "✓ Email confirmed"
+            : "Not verified";
+
+});
+
