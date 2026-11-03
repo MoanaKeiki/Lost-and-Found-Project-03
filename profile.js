@@ -1,13 +1,55 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("JavaScript работает");
-console.log(document.querySelectorAll('.filter-btn').length);
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.item-card');
-  console.log("Карточек:", items.length);
-items.forEach(item => {
-    console.log("Статус:", item.getAttribute('data-status'));
+   
+document.addEventListener("DOMContentLoaded", function() {
+
+    const tabLinks = document.querySelectorAll(".tabs a");
+
+    tabLinks.forEach(link => {
+
+        link.addEventListener("click", function(e) {
+
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            tabLinks.forEach(tab => {
+                tab.classList.remove("active");
+                tab.parentElement.classList.remove("active-tab");
+                tab.parentElement.classList.remove("resolved-tab");
+            });
+
+            // Activate clicked tab
+            this.classList.add("active");
+
+            if (this.getAttribute("href") === "#active-tab-content") {
+                this.parentElement.classList.add("active-tab");
+            } else {
+                this.parentElement.classList.add("resolved-tab");
+            }
+
+            // Hide all tab contents
+            const contents = document.querySelectorAll(".tabs-content .tab-pane");
+
+            contents.forEach(content => {
+                content.style.display = "none";
+                content.classList.remove("active");
+            });
+
+            // Show selected content
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if (target) {
+                target.style.display = "block";
+                target.classList.add("active");
+            }
+
+        });
+
+    });
+
+});
+
 });
 
   buttons.forEach(button => {
