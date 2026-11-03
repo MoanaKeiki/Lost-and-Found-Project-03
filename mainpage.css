@@ -266,7 +266,7 @@ form {
     display: none !important;
 }
 /* Контейнер на всю ширину с линиями сверху и снизу */
-.filter-navigation {
+.filter-navigation{
   display: flex;
   width: 100%;               /* Растягиваем на весь экран */
   box-sizing: border-box;
@@ -278,9 +278,7 @@ form {
   padding: 8px 0;            /* Небольшой внутренний отступ, чтобы кнопки не липли к линиям */
   margin-bottom: 30px;       /* Отступ до карточек */
 }
-
-/* Кнопки */
-.filter-btn {
+.status-btn {
   flex: 1;                   /* Заставляем кнопки делиться поровну и занимать всё пространство */
   text-align: center;
   
@@ -301,20 +299,58 @@ form {
 }
 
 /* Эффект при наведении */
-.filter-btn:hover {
+.status-btn:hover {
   background-color: #f3f4f6; /* Легкая подложка при наведении */
   color: #3e6c74;
 }
 
 /* Стиль для выбранного (активного) фильтра */
-.filter-btn.active {
+.status-btn.active {
   background-color: #4a939b; /* Темный строгий фон для активной кнопки */
   color: #ffffff;            /* Белый текст */
   font-weight: 600;          /* Делаем текст чуть жирнее */
 }
 
 /* Фокус-стиль для доступности (без уродливого дефолтного аутлайна) */
-.filter-btn:focus-visible {
+.status-btn:focus-visible {
+  background-color: #e5e7eb; /* Показывает фокус при табе с клавиатуры */
+}
+/* Кнопки */
+.category-btn {
+  flex: 1;                   /* Заставляем кнопки делиться поровну и занимать всё пространство */
+  text-align: center;
+  
+  background: transparent;   /* Прозрачный фон по умолчанию */
+  color: #4b5563;            /* Спокойный серый цвет текста */
+  
+  /* Полностью убираем обводки и аутлайны */
+  border: none;              
+  outline: none;             
+  -webkit-tap-highlight-color: transparent; /* Убирает синюю рамку при клике на смартфонах */
+  
+  padding: 10px 10px;        /* Высота кнопок */
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;        /* Менее круглые, строгие углы */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Эффект при наведении */
+.category-btn:hover {
+  background-color: #f3f4f6; /* Легкая подложка при наведении */
+  color: #3e6c74;
+}
+
+/* Стиль для выбранного (активного) фильтра */
+.category-btn.active {
+  background-color: #4a939b; /* Темный строгий фон для активной кнопки */
+  color: #ffffff;            /* Белый текст */
+  font-weight: 600;          /* Делаем текст чуть жирнее */
+}
+
+/* Фокус-стиль для доступности (без уродливого дефолтного аутлайна) */
+.category-btn:focus-visible {
   background-color: #e5e7eb; /* Показывает фокус при табе с клавиатуры */
 }
 .item-card.hidden {
