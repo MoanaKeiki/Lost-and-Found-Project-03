@@ -81,3 +81,41 @@ console.log("Кнопка закрытия:", closeBtn);
         }
     });
 });
+//
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("JavaScript работает");
+    
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.item-card');
+    
+    console.log("Кнопок найдено:", buttons.length);
+    console.log("Карточек найдено:", items.length);
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Переключаем активный класс у кнопок
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Получаем значение фильтра из нажатой кнопки (например: electronic, keys)
+            const filterValue = button.getAttribute('data-filter');
+            console.log("Нажата кнопка категории:", filterValue);
+
+            // Фильтруем карточки
+            items.forEach(item => {
+                // Карточки теперь должны иметь атрибут data-category
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || itemCategory === filterValue) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+
+function openItem(id) {
+    window.location.href = `post.html?id=${id}`;
+}
