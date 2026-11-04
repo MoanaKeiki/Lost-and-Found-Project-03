@@ -97,6 +97,9 @@ var fileName = Date.now() + '.' + extension;
 
     message.textContent = 'Report submitted successfully!';
     message.style.color = 'green';
+    var sound = document.getElementById('success-sound');
+    sound.currentTime = 0;
+    sound.play();
 
     document.getElementById('report-form').reset();
     document.getElementById('preview-container').innerHTML = '';
